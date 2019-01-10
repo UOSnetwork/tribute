@@ -1398,36 +1398,36 @@ var TributeRange = function () {
                 left: rect.left + windowLeft + span.offsetLeft + parseInt(computed.borderLeftWidth)
             };
 
-            var windowWidth = window.innerWidth;
-            var windowHeight = window.innerHeight;
+//             var windowWidth = window.innerWidth;
+//             var windowHeight = window.innerHeight;
 
-            var menuDimensions = this.getMenuDimensions();
-            var menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
+//             var menuDimensions = this.getMenuDimensions();
+//             var menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
 
-            if (menuIsOffScreen.right) {
-                coordinates.right = windowWidth - coordinates.left;
-                coordinates.left = 'auto';
-            }
+//             if (menuIsOffScreen.right) {
+//                 coordinates.right = windowWidth - coordinates.left;
+//                 coordinates.left = 'auto';
+//             }
 
-            var parentHeight = this.tribute.menuContainer ? this.tribute.menuContainer.offsetHeight : this.getDocument().body.offsetHeight;
+//             var parentHeight = this.tribute.menuContainer ? this.tribute.menuContainer.offsetHeight : this.getDocument().body.offsetHeight;
 
-            if (menuIsOffScreen.bottom) {
-                var parentRect = this.tribute.menuContainer ? this.tribute.menuContainer.getBoundingClientRect() : this.getDocument().body.getBoundingClientRect();
-                var scrollStillAvailable = parentHeight - (windowHeight - parentRect.top);
+//             if (menuIsOffScreen.bottom) {
+//                 var parentRect = this.tribute.menuContainer ? this.tribute.menuContainer.getBoundingClientRect() : this.getDocument().body.getBoundingClientRect();
+//                 var scrollStillAvailable = parentHeight - (windowHeight - parentRect.top);
 
-                coordinates.bottom = scrollStillAvailable + (windowHeight - rect.top - span.offsetTop);
-                coordinates.top = 'auto';
-            }
+//                 coordinates.bottom = scrollStillAvailable + (windowHeight - rect.top - span.offsetTop);
+//                 coordinates.top = 'auto';
+//             }
 
-            menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
-            if (menuIsOffScreen.left) {
-                coordinates.left = windowWidth > menuDimensions.width ? windowLeft + windowWidth - menuDimensions.width : windowLeft;
-                delete coordinates.right;
-            }
-            if (menuIsOffScreen.top) {
-                coordinates.top = windowHeight > menuDimensions.height ? windowTop + windowHeight - menuDimensions.height : windowTop;
-                delete coordinates.bottom;
-            }
+//             menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
+//             if (menuIsOffScreen.left) {
+//                 coordinates.left = windowWidth > menuDimensions.width ? windowLeft + windowWidth - menuDimensions.width : windowLeft;
+//                 delete coordinates.right;
+//             }
+//             if (menuIsOffScreen.top) {
+//                 coordinates.top = windowHeight > menuDimensions.height ? windowTop + windowHeight - menuDimensions.height : windowTop;
+//                 delete coordinates.bottom;
+//             }
 
             this.getDocument().body.removeChild(div);
             return coordinates;
@@ -1465,36 +1465,36 @@ var TributeRange = function () {
                 left: rect.left + windowLeft,
                 top: rect.top + markerEl.offsetHeight + windowTop
             };
-            var windowWidth = window.innerWidth;
-            var windowHeight = window.innerHeight;
+//             var windowWidth = window.innerWidth;
+//             var windowHeight = window.innerHeight;
 
-            var menuDimensions = this.getMenuDimensions();
-            var menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
+//             var menuDimensions = this.getMenuDimensions();
+//             var menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
 
-            if (menuIsOffScreen.right) {
-                coordinates.left = 'auto';
-                coordinates.right = windowWidth - rect.left - windowLeft;
-            }
+//             if (menuIsOffScreen.right) {
+//                 coordinates.left = 'auto';
+//                 coordinates.right = windowWidth - rect.left - windowLeft;
+//             }
 
-            var parentHeight = this.tribute.menuContainer ? this.tribute.menuContainer.offsetHeight : this.getDocument().body.offsetHeight;
+//             var parentHeight = this.tribute.menuContainer ? this.tribute.menuContainer.offsetHeight : this.getDocument().body.offsetHeight;
 
-            if (menuIsOffScreen.bottom) {
-                var parentRect = this.tribute.menuContainer ? this.tribute.menuContainer.getBoundingClientRect() : this.getDocument().body.getBoundingClientRect();
-                var scrollStillAvailable = parentHeight - (windowHeight - parentRect.top);
+//             if (menuIsOffScreen.bottom) {
+//                 var parentRect = this.tribute.menuContainer ? this.tribute.menuContainer.getBoundingClientRect() : this.getDocument().body.getBoundingClientRect();
+//                 var scrollStillAvailable = parentHeight - (windowHeight - parentRect.top);
 
-                coordinates.top = 'auto';
-                coordinates.bottom = scrollStillAvailable + (windowHeight - rect.top);
-            }
+//                 coordinates.top = 'auto';
+//                 coordinates.bottom = scrollStillAvailable + (windowHeight - rect.top);
+//             }
 
-            menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
-            if (menuIsOffScreen.left) {
-                coordinates.left = windowWidth > menuDimensions.width ? windowLeft + windowWidth - menuDimensions.width : windowLeft;
-                delete coordinates.right;
-            }
-            if (menuIsOffScreen.top) {
-                coordinates.top = windowHeight > menuDimensions.height ? windowTop + windowHeight - menuDimensions.height : windowTop;
-                delete coordinates.bottom;
-            }
+//             menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
+//             if (menuIsOffScreen.left) {
+//                 coordinates.left = windowWidth > menuDimensions.width ? windowLeft + windowWidth - menuDimensions.width : windowLeft;
+//                 delete coordinates.right;
+//             }
+//             if (menuIsOffScreen.top) {
+//                 coordinates.top = windowHeight > menuDimensions.height ? windowTop + windowHeight - menuDimensions.height : windowTop;
+//                 delete coordinates.bottom;
+//             }
 
             markerEl.parentNode.removeChild(markerEl);
             return coordinates;
